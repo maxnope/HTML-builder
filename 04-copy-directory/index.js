@@ -1,0 +1,2 @@
+const copyDir = function () {};
+copyDir();

@@ -11,6 +11,12 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+rl.on('SIGINT', () => {
+  console.log('\nGoodbye!');
+  writeStream.end();
+  rl.close();
+});
+
 const askQuestion = () => {
   rl.question('Enter message (or type "exit" to quit): ', (answer) => {
     if (answer.toLowerCase() === 'exit') {
